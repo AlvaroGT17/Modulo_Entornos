@@ -10,6 +10,9 @@ import javax.swing.JRadioButton;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Font;
+import java.awt.Color;
+import javax.swing.SwingConstants;
 
 public class Ejercicio18 {
 
@@ -43,74 +46,85 @@ public class Ejercicio18 {
 	 */
 	private void initialize() {
 		frmSubvenciones = new JFrame();
-		frmSubvenciones.setTitle("Subvenciones");
+		frmSubvenciones.getContentPane().setBackground(new Color(255, 208, 255));
+		frmSubvenciones.setFont(new Font("Proxy 1", Font.PLAIN, 14));
+		frmSubvenciones.setTitle("Comprobación de subvenciones");
 		frmSubvenciones.setBounds(100, 100, 450, 300);
 		frmSubvenciones.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmSubvenciones.getContentPane().setLayout(null);
-		
-		JLabel lblNewLabel = new JLabel("Al");
-		lblNewLabel.setBounds(270, 240, 156, 13);
+
+		JLabel lblNewLabel = new JLabel("Alvaro Gómez Tejada");
+		lblNewLabel.setFont(new Font("Proxy 1", Font.PLAIN, 14));
+		lblNewLabel.setBounds(242, 10, 184, 19);
 		frmSubvenciones.getContentPane().add(lblNewLabel);
-		
-		JLabel lblNewLabel_1 = new JLabel("Nombre de empresa");
-		lblNewLabel_1.setBounds(10, 28, 118, 13);
+
+		JLabel lblNewLabel_1 = new JLabel("Introducir nombre de la empresa");
+		lblNewLabel_1.setBounds(10, 28, 157, 32);
 		frmSubvenciones.getContentPane().add(lblNewLabel_1);
-		
+
 		JTextField textEmpresa = new JTextField();
-		textEmpresa.setBounds(138, 25, 96, 19);
+		textEmpresa.setBounds(10, 67, 157, 19);
 		frmSubvenciones.getContentPane().add(textEmpresa);
 		textEmpresa.setColumns(10);
-		
-		JRadioButton radioH = new JRadioButton("Hombres");
-		radioH.setBounds(138, 66, 103, 21);
-		frmSubvenciones.getContentPane().add(radioH);
-		
-		JRadioButton radioMayor = new JRadioButton("Mayores de 18");
-		radioMayor.setBounds(138, 89, 130, 21);
+
+		JRadioButton radioHombre = new JRadioButton("Hombres");
+		radioHombre.setForeground(new Color(0, 0, 0));
+		radioHombre.setBackground(new Color(255, 208, 255));
+		radioHombre.setBounds(10, 112, 103, 21);
+		frmSubvenciones.getContentPane().add(radioHombre);
+
+		JRadioButton radioMayor = new JRadioButton("Mayores de 18 años");
+		radioMayor.setBackground(new Color(255, 208, 255));
+		radioMayor.setBounds(119, 112, 130, 21);
 		frmSubvenciones.getContentPane().add(radioMayor);
-		
-		JRadioButton radioEsp = new JRadioButton("Español");
-		radioEsp.setBounds(138, 112, 103, 21);
-		frmSubvenciones.getContentPane().add(radioEsp);
-		
+
+		JRadioButton Espanol = new JRadioButton("Español");
+		Espanol.setBackground(new Color(255, 208, 255));
+		Espanol.setBounds(254, 112, 103, 21);
+		frmSubvenciones.getContentPane().add(Espanol);
+
 		JLabel lblNewLabel_2 = new JLabel("Contrata a :");
-		lblNewLabel_2.setBounds(10, 70, 65, 13);
+		lblNewLabel_2.setBounds(10, 96, 65, 13);
 		frmSubvenciones.getContentPane().add(lblNewLabel_2);
-		
-		JRadioButton radioM = new JRadioButton("Mujeres");
-		radioM.setBounds(270, 66, 103, 21);
-		frmSubvenciones.getContentPane().add(radioM);
-		
-		JRadioButton radioMenor = new JRadioButton("Menores de 18");
-		radioMenor.setBounds(270, 89, 130, 21);
+
+		JRadioButton radioMujer = new JRadioButton("Mujeres");
+		radioMujer.setBackground(new Color(255, 208, 255));
+		radioMujer.setBounds(20, 135, 103, 21);
+		frmSubvenciones.getContentPane().add(radioMujer);
+
+		JRadioButton radioMenor = new JRadioButton("Menores de 18 años");
+		radioMenor.setBackground(new Color(255, 208, 255));
+		radioMenor.setBounds(129, 135, 130, 21);
 		frmSubvenciones.getContentPane().add(radioMenor);
-		
-		JRadioButton radioExt = new JRadioButton("Extranjero");
-		radioExt.setBounds(270, 112, 103, 21);
-		frmSubvenciones.getContentPane().add(radioExt);
-	
-		
+
+		JRadioButton extranjero = new JRadioButton("Extranjero");
+		extranjero.setBackground(new Color(255, 208, 255));
+		extranjero.setBounds(264, 135, 103, 21);
+		frmSubvenciones.getContentPane().add(extranjero);
+
 		JLabel lblResul = new JLabel("");
-		lblResul.setBounds(121, 186, 305, 13);
+		lblResul.setHorizontalAlignment(SwingConstants.CENTER);
+		lblResul.setBounds(10, 240, 416, 13);
 		frmSubvenciones.getContentPane().add(lblResul);
-		
-		JButton btnComprobar = new JButton("Comprobar");
+
+		JButton btnComprobar = new JButton("Solicitar subvención");
+		btnComprobar.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnComprobar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String empresa= textEmpresa.getText();
+				String empresa = textEmpresa.getText();
 				if (textEmpresa.getText().contentEquals("")) {
-					JOptionPane.showMessageDialog(null, "Debes introducir un nombre de empresa" , "Error",
+					JOptionPane.showMessageDialog(null, "Error!!! Inutil introdudca un nombre de empresa", "Error",
 							JOptionPane.INFORMATION_MESSAGE);
 					lblResul.setText("");
-				}else if (radioM.isSelected() && radioMayor.isSelected() && radioExt.isSelected()) {
-					lblResul.setText("La empresa "+ empresa + " puede solicitar la subvención");
+				} else if (radioMujer.isSelected() && radioMayor.isSelected() && extranjero.isSelected()) {
+					lblResul.setText("La empresa " + empresa + " puede solicitar la subvención");
 				} else {
-					lblResul.setText("La empresa "+ empresa + " no puede solicitar la subvención");
+					lblResul.setText("La empresa " + empresa + " no puede solicitar la subvención");
 				}
 			}
 		});
 
-		btnComprobar.setBounds(10, 182, 101, 21);
+		btnComprobar.setBounds(138, 184, 157, 46);
 		frmSubvenciones.getContentPane().add(btnComprobar);
 	}
 }
