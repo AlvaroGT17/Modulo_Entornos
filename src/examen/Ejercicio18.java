@@ -54,12 +54,12 @@ public class Ejercicio18 {
 		frmSubvenciones.getContentPane().setLayout(null);
 
 		JLabel lblNewLabel = new JLabel("Alvaro Gómez Tejada");
-		lblNewLabel.setFont(new Font("Proxy 1", Font.PLAIN, 14));
-		lblNewLabel.setBounds(242, 10, 184, 19);
+		lblNewLabel.setFont(new Font("Proxy 1", Font.BOLD, 14));
+		lblNewLabel.setBounds(229, 10, 197, 19);
 		frmSubvenciones.getContentPane().add(lblNewLabel);
 
 		JLabel lblNewLabel_1 = new JLabel("Introducir nombre de la empresa");
-		lblNewLabel_1.setBounds(10, 28, 157, 32);
+		lblNewLabel_1.setBounds(10, 28, 209, 32);
 		frmSubvenciones.getContentPane().add(lblNewLabel_1);
 
 		JTextField textEmpresa = new JTextField();
@@ -75,12 +75,12 @@ public class Ejercicio18 {
 
 		JRadioButton radioMayor = new JRadioButton("Mayores de 18 años");
 		radioMayor.setBackground(new Color(255, 208, 255));
-		radioMayor.setBounds(119, 112, 130, 21);
+		radioMayor.setBounds(119, 112, 157, 21);
 		frmSubvenciones.getContentPane().add(radioMayor);
 
 		JRadioButton Espanol = new JRadioButton("Español");
 		Espanol.setBackground(new Color(255, 208, 255));
-		Espanol.setBounds(254, 112, 103, 21);
+		Espanol.setBounds(278, 112, 103, 21);
 		frmSubvenciones.getContentPane().add(Espanol);
 
 		JLabel lblNewLabel_2 = new JLabel("Contrata a :");
@@ -94,12 +94,12 @@ public class Ejercicio18 {
 
 		JRadioButton radioMenor = new JRadioButton("Menores de 18 años");
 		radioMenor.setBackground(new Color(255, 208, 255));
-		radioMenor.setBounds(129, 135, 130, 21);
+		radioMenor.setBounds(129, 135, 147, 21);
 		frmSubvenciones.getContentPane().add(radioMenor);
 
 		JRadioButton extranjero = new JRadioButton("Extranjero");
 		extranjero.setBackground(new Color(255, 208, 255));
-		extranjero.setBounds(264, 135, 103, 21);
+		extranjero.setBounds(288, 135, 103, 21);
 		frmSubvenciones.getContentPane().add(extranjero);
 
 		JLabel lblResul = new JLabel("");
@@ -124,7 +124,7 @@ public class Ejercicio18 {
 			}
 		});
 
-		btnComprobar.setBounds(138, 184, 157, 46);
+		btnComprobar.setBounds(129, 184, 176, 46);
 		frmSubvenciones.getContentPane().add(btnComprobar);
 	}
 }
